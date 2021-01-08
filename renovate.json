@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "branchPrefix": "issue/renovate-",
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "^com.atlassian"
+      ],
+      "allowedVersions": "!/-[0-9a-f]{6,10}$/",
+      "groupName": "Atlassian"
+    },
+    {
+      "packagePatterns": [
+        "dom4j:dom4j",
+        "log4j:log4j",
+        "jaxen:jaxen",
+        "^org.codehaus.jackson"
+      ],
+      "allowedVersions": "/.+-atlassian-[0-9]+$/",
+      "groupName": "3rd party forks"
+    },
+    {
+      "updateTypes": [
+        "patch",
+        "minor"
+      ],
+      "groupName": "Non major"
+    }
+  ]
+}
