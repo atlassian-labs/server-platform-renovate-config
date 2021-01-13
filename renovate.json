@@ -4,6 +4,7 @@
     "config:base"
   ],
   "branchPrefix": "issue/renovate-",
+  "fetchReleaseNotes": false,
   "packageRules": [
     {
       "packagePatterns": [
