@@ -22,8 +22,7 @@
         "opensymphony:oscore",
         "commons-httpclient:commons-httpclient"
       ],
-      "allowedVersions": "/.+-atlassian-[0-9]+$/",
-      "groupName": "3rd party forks"
+      "allowedVersions": "/.+-atlassian-[0-9]+$/"
     },
     {
       "updateTypes": [
