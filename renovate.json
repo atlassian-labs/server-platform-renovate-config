@@ -11,8 +11,7 @@
       "packagePatterns": [
         "^com.atlassian"
       ],
-      "allowedVersions": "!/-[0-9a-f]{6,10}$/",
-      "groupName": "Atlassian"
+      "allowedVersions": "!/-[0-9a-f]{6,10}$/"
     },
     {
       "packagePatterns": [
@@ -37,7 +36,7 @@
       "updateTypes": [
         "patch"
       ],
-      "groupName": "patch"
+      "groupName": "patches"
     }
   ]
 }
