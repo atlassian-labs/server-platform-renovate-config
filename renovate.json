@@ -5,6 +5,7 @@
   ],
   "branchPrefix": "issue/renovate-",
   "fetchReleaseNotes": false,
+  "separateMinorPatch": true,
   "packageRules": [
     {
       "packagePatterns": [
@@ -26,10 +27,9 @@
     },
     {
       "updateTypes": [
-        "patch",
-        "minor"
+        "patch"
       ],
-      "groupName": "non-major"
+      "groupName": "patch"
     }
   ]
 }
