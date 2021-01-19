@@ -35,14 +35,6 @@
         "patch"
       ],
       "groupName": "patches"
-    },
-    {
-      "packagePatterns": [
-        "javax.xml.bind:jaxb-api",
-        "com.sun.xml.bind:jaxb-impl",
-        "com.sun.xml.bind:jaxb-core"
-      ],
-      "groupName": "JAXB"
     }
   ]
 }
