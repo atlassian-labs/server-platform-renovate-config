@@ -35,8 +35,10 @@
         "^org.springframework:"
       ],
       "updateTypes": [
-        "patch"
-      ]
+        "major",
+        "minor"
+      ],
+      "enabled": false
     },
     {
       "updateTypes": [
