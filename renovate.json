@@ -6,6 +6,7 @@
   "branchPrefix": "issue/renovate-",
   "fetchReleaseNotes": false,
   "separateMinorPatch": true,
+  "reviewersSampleSize": 2,
   "packageRules": [
     {
       "packagePatterns": [
