@@ -27,6 +27,7 @@
     },
     {
       "packagePatterns": [
+        "^com.atlassian",
         "com.google.code.findbugs:annotations",
         "biz.aQute.bnd:biz.aQute.bndlib"
       ],
