@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "ignorePresets": [":prHourlyLimit2"],
   "branchPrefix": "issue/",
   "additionalBranchPrefix": "renovate-",
   "fetchReleaseNotes": false,
