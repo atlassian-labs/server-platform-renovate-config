@@ -3,7 +3,8 @@
   "extends": [
     "config:base"
   ],
-  "branchPrefix": "issue/renovate-",
+  "branchPrefix": "issue/",
+  "additionalBranchPrefix": "renovate-",
   "fetchReleaseNotes": false,
   "separateMinorPatch": true,
   "bbUseDefaultReviewers": false,
