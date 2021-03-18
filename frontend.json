@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:common"
+  ],
+  "branchPrefix": "issue/renovate-",
+  "fetchReleaseNotes": false,
+  "separateMinorPatch": true,
+  "bbUseDefaultReviewers": true,
+  "reviewersSampleSize": 2
+}

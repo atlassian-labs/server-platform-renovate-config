@@ -1,0 +1,58 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:common"
+  ],
+  "fetchReleaseNotes": false,
+  "separateMinorPatch": true,
+  "bbUseDefaultReviewers": false,
+  "reviewers": [
+    "aswan",
+    "bmaccarthy",
+    "ablekhman",
+    "wcustodio",
+    "cwilliams",
+    "mwieclawska",
+    "mtokarski",
+    "msmolczewski",
+    "zstruczewska"
+    ],
+  "reviewersSampleSize": 2,
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "^com.atlassian"
+      ],
+      "allowedVersions": "!/-[0-9a-f]{6,10}$/"
+    },
+    {
+      "matchPackagePatterns": [
+        "dom4j:dom4j",
+        "log4j:log4j",
+        "jaxen:jaxen",
+        "^org.codehaus.jackson",
+        "opensymphony:oscore",
+        "commons-httpclient:commons-httpclient"
+      ],
+      "allowedVersions": "/.+-atlassian-[0-9]+$/"
+    },
+    {
+      "matchPackagePatterns": [
+        "^com.atlassian",
+        "com.google.code.findbugs:annotations",
+        "biz.aQute.bnd:biz.aQute.bndlib"
+      ],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
+    },
+    {
+      "matchPackagePatterns": [
+        "^org.springframework:"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
+      "enabled": false
+    }
+  ]
+}
