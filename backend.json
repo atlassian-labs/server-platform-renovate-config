@@ -5,19 +5,6 @@
   ],
   "fetchReleaseNotes": false,
   "separateMinorPatch": true,
-  "bbUseDefaultReviewers": false,
-  "reviewers": [
-    "aswan",
-    "bmaccarthy",
-    "ablekhman",
-    "wcustodio",
-    "cwilliams",
-    "mwieclawska",
-    "mtokarski",
-    "msmolczewski",
-    "zstruczewska"
-    ],
-  "reviewersSampleSize": 2,
   "packageRules": [
     {
       "matchPackagePatterns": [
