@@ -16,12 +16,6 @@
     },
     {
       "matchPackagePatterns": [
-        "^com.atlassian"
-      ],
-      "allowedVersions": "< 999.0.0"
-    },
-    {
-      "matchPackagePatterns": [
         "dom4j:dom4j",
         "log4j:log4j",
         "jaxen:jaxen",
