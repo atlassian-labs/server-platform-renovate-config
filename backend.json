@@ -21,7 +21,8 @@
         "jaxen:jaxen",
         "^org.codehaus.jackson",
         "opensymphony:oscore",
-        "commons-httpclient:commons-httpclient"
+        "commons-httpclient:commons-httpclient",
+        "commons-io:commons-io"
       ],
       "allowedVersions": "/.+-atlassian-[0-9]+$/"
     },
