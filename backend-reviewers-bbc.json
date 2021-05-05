@@ -1,16 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "bbUseDefaultReviewers": false,
-  "reviewersSampleSize": 2,
+  "reviewersSampleSize": 1,
   "reviewers": [
-    "aswan",
-    "bmccarthy",
-    "ablekhman",
-    "wcustodio",
-    "cwilliams_atl",
-    "mwieclawska",
-    "mtokarski",
-    "msmolczewski",
-    "zstruczewska"
+    "ReviewTaggingBot"
   ]
 }
