@@ -16,13 +16,15 @@
     },
     {
       "matchPackagePatterns": [
-        "dom4j:dom4j",
-        "log4j:log4j",
-        "jaxen:jaxen",
-        "^org.codehaus.jackson",
-        "opensymphony:oscore",
+        "com.sun.jersey:jersey-client",
         "commons-httpclient:commons-httpclient",
-        "commons-io:commons-io"
+        "commons-io:commons-io",
+        "dom4j:dom4j",
+        "javax.xml.bind:jaxb-api",
+        "jaxen:jaxen",
+        "log4j:log4j",
+        "opensymphony:oscore",
+        "^org.codehaus.jackson"
       ],
       "allowedVersions": "/.+-atlassian-[0-9]+$/"
     },
