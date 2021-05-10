@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>atlassian-labs/server-platform-renovate-config:common"
+    "github>atlassian-labs/server-platform-renovate-config:common",
+    "github>atlassian-labs/server-platform-renovate-config:package-rules-maven"
   ],
   "branchPrefix": "issue/renovate-",
   "fetchReleaseNotes": false,
