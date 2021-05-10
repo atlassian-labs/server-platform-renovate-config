@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackageNames": ["eslint", "stylelint", "prettier"],
+      "matchPackagePatterns": ["^eslint", "^stylelint"],
+      "groupName": "frontend - lint"
+    },
+    {
+      "matchPackageNames": ["jest", "karma", "mocha", "sinon", "chai"],
+      "matchPackagePatterns": ["^jest", "^karma", "^mocha", "^sinon", "^chai"],
+      "groupName": "frontend - test"
+    },
+    {
+      "matchPackagePatterns": ["^@babel/"],
+      "groupName": "frontend - babel"
+    },
+    {
+      "matchPackageNames": [
+        "atlassian-webresource-webpack-plugin",
+        "mini-css-extract-plugin",
+        "webpack"
+      ],
+      "matchPackagePatterns": ["^webpack", "-loader$"],
+      "groupName": "frontend - webpack"
+    }
+  ]
+}
