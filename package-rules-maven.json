@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^com.atlassian"],
+      "allowedVersions": "!/-[0-9a-f]{6,10}$/"
+    },
+    {
+      "matchPackagePatterns": [
+        "com.sun.jersey:jersey-client",
+        "commons-httpclient:commons-httpclient",
+        "commons-io:commons-io",
+        "dom4j:dom4j",
+        "javax.xml.bind:jaxb-api",
+        "jaxen:jaxen",
+        "log4j:log4j",
+        "opensymphony:oscore",
+        "^org.codehaus.jackson"
+      ],
+      "allowedVersions": "/.+-atlassian-[0-9]+$/"
+    },
+    {
+      "matchPackagePatterns": [
+        "^com.atlassian",
+        "com.google.code.findbugs:annotations",
+        "biz.aQute.bnd:biz.aQute.bndlib"
+      ],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
+    }
+  ]
+}
