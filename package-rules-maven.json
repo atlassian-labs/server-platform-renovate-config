@@ -2,10 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "matchPackagePatterns": ["^com.atlassian"],
-      "allowedVersions": "!/-[0-9a-f]{6,10}$/"
-    },
-    {
       "matchPackagePatterns": [
         "com.sun.jersey:jersey-client",
         "commons-httpclient:commons-httpclient",
