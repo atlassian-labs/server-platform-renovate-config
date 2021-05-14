@@ -22,6 +22,10 @@
         "biz.aQute.bnd:biz.aQute.bndlib"
       ],
       "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
+    },
+    {
+      "matchPackageNames": [ "com.microsoft.sqlserver:mssql-jdbc" ],
+      "allowedVersions": "/jre8$/"
     }
   ]
 }
