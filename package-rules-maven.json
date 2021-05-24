@@ -3,11 +3,8 @@
   "packageRules": [
     {
       "matchPackagePatterns": [
-        "com.sun.jersey:jersey-client",
         "commons-httpclient:commons-httpclient",
-        "commons-io:commons-io",
         "dom4j:dom4j",
-        "javax.xml.bind:jaxb-api",
         "jaxen:jaxen",
         "log4j:log4j",
         "opensymphony:oscore",
