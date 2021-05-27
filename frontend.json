@@ -6,8 +6,6 @@
     "github>atlassian-labs/server-platform-renovate-config:package-rules-maven"
   ],
   "branchPrefix": "issue/renovate-",
-  "fetchReleaseNotes": false,
-  "separateMinorPatch": true,
   "bbUseDefaultReviewers": true,
   "reviewersSampleSize": 2
 }
