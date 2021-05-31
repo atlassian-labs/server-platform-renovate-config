@@ -3,13 +3,18 @@
   "packageRules": [
     {
       "matchPackageNames": ["eslint", "stylelint", "prettier"],
-      "matchPackagePatterns": ["^eslint", "^stylelint"],
+      "matchPackagePatterns": ["^eslint", "^stylelint", "^prettier"],
       "groupName": "frontend - lint"
     },
     {
-      "matchPackageNames": ["jest", "karma", "mocha", "sinon", "chai"],
-      "matchPackagePatterns": ["^jest", "^karma", "^mocha", "^sinon", "^chai"],
+      "matchPackageNames": ["karma", "mocha", "sinon", "chai"],
+      "matchPackagePatterns": ["^karma", "^mocha", "^sinon", "^chai"],
       "groupName": "frontend - test"
+    },
+    {
+      "matchPackageNames": ["jest", "ts-jest"],
+      "matchPackagePatterns": ["^jest"],
+      "groupName": "frontend - jest"
     },
     {
       "matchPackagePatterns": ["^@babel/"],
@@ -23,6 +28,11 @@
       ],
       "matchPackagePatterns": ["^webpack", "-loader$"],
       "groupName": "frontend - webpack"
+    },
+    {
+      "matchPackageNames": ["rollup"],
+      "matchPackagePatterns": ["^@rollup/", "^rollup"],
+      "groupName": "frontend - rollup"
     }
   ]
 }
