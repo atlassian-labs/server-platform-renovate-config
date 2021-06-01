@@ -13,15 +13,18 @@
       "allowedVersions": "/.+-atlassian-[0-9]+$/"
     },
     {
+      "matchPackagePatterns": ["^com.atlassian"],
+      "allowedVersions": "/^[0-9]{1,3}\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
+    },
+    {
       "matchPackagePatterns": [
-        "^com.atlassian",
         "com.google.code.findbugs:annotations",
         "biz.aQute.bnd:biz.aQute.bndlib"
       ],
       "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
     },
     {
-      "matchPackageNames": [ "com.microsoft.sqlserver:mssql-jdbc" ],
+      "matchPackageNames": ["com.microsoft.sqlserver:mssql-jdbc"],
       "allowedVersions": "/jre8$/"
     }
   ]
