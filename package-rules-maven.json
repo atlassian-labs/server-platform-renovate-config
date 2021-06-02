@@ -26,6 +26,10 @@
     {
       "matchPackageNames": ["com.microsoft.sqlserver:mssql-jdbc"],
       "allowedVersions": "/jre8$/"
+    },
+    {
+      "matchPackageNames": ["commons-io:commons-io"],
+      "allowedVersions": "!/1.4-backport-IO-168/"
     }
   ]
 }
