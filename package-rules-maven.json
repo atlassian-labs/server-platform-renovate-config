@@ -30,6 +30,14 @@
     {
       "matchPackageNames": ["commons-io:commons-io"],
       "allowedVersions": "!/1.4-backport-IO-168/"
+    },
+    {
+      "matchPackageNames": ["javax.servlet:servlet-api"],
+      "allowedVersions": "!/2.4-20040521/"
+    },
+    {
+      "matchPackageNames": ["c3p0:c3p0"],
+      "allowedVersions": "!/0.9.1.2-pbruski/"
     }
   ]
 }
