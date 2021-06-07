@@ -41,11 +41,11 @@
     },
     {
       "matchPackageNames": ["javax.xml.bind:jaxb-api"],
-      "allowedVersions": "!/2.1-osgi/"
+      "allowedVersions": "!/^2\\.1-(?:(?!atlassian-[0-9]+).)*$/"
     },
     {
       "matchPackageNames": ["com.sun.jersey:jersey-client"],
-      "allowedVersions": "!/1.5-ea09/"
+      "allowedVersions": "!/^1\\.5-(?:(?!atlassian-[0-9]+).)*$/"
     }
   ]
 }
