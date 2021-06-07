@@ -38,6 +38,14 @@
     {
       "matchPackageNames": ["c3p0:c3p0"],
       "allowedVersions": "!/0.9.1.2-pbruski/"
+    },
+    {
+      "matchPackageNames": ["javax.xml.bind:jaxb-api"],
+      "allowedVersions": "!/2.1-osgi/"
+    },
+    {
+      "matchPackageNames": ["com.sun.jersey:jersey-client"],
+      "allowedVersions": "!/1.5-ea09/"
     }
   ]
 }
