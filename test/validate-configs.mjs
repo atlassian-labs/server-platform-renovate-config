@@ -3,11 +3,16 @@ import { $ } from 'zx';
 
 import { configFiles } from './util.mjs';
 
+// be quiet!
+$.verbose = false;
+
 let failed = false;
 for await (const file of await configFiles()) {
     try {
-        const result = await $`RENOVATE_CONFIG_FILE=${file} node_modules/.bin/renovate-config-validator`;
+        await $`RENOVATE_CONFIG_FILE=${file} node_modules/.bin/renovate-config-validator`;
+        console.log(`✅ "${file}" validated!`);
     } catch (e) {
+        console.log(`❌ Checking "${file}" failed:\n`, chalk.red(e.stdout.split('ERROR:')[1]));
         failed = true;
     }
 }
