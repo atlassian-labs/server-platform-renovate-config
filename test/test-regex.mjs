@@ -84,6 +84,8 @@ for await (const fileName of jsonFileNamesExtPackage) {
 ${errors.join('\n\n')}
 --------------END FILE ${fileName}-------------------
 `)
+    } else {
+        console.log(`✅ All regex patterns in file "${fileName}" passed!`);
     }
 }
 
