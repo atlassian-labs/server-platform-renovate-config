@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Renovate config used for server platform projects",
   "scripts": {
-    "test": "run-p verify:config verify:regex",
-    "verify:config": "renovate-config-validator",
-    "verify:regex": "node test-regex.mjs"
+    "test": "run-s verify:config verify:regex",
+    "verify:config": "node test/validate-configs.mjs",
+    "verify:regex": "node test/test-regex.mjs"
   },
   "private": true,
   "devDependencies": {
     "chalk": "^4.1.1",
     "npm-run-all": "^4.1.5",
-    "renovate": "^25.38.2"
+    "renovate": "^25.38.2",
+    "zx": "^1.14.1"
   }
 }

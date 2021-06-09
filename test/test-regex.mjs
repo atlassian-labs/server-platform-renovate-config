@@ -1,16 +1,9 @@
 import { isConfigRegex } from 'renovate/dist/util/regex.js';
 import fs from 'fs';
-import { extname } from 'path';
 import chalk from 'chalk';
 import RE2 from 're2';
 
-const dirEntries = await fs.promises.readdir('.', { withFileTypes: true });
-const dirFiles = dirEntries.filter(dirent => dirent.isFile());
-const jsonFileNamesExtPackage = dirFiles
-    .filter(dirent => extname(dirent.name) === ".json")
-    .map(dirent => dirent.name)
-    .filter(name => name !== "package.json" && name !== "package-lock.json");
-
+import { configFiles } from './util.mjs';
 
 const toArray = (arrOrStringOrVoid) => {
     if (!arrOrStringOrVoid) {
@@ -69,6 +62,7 @@ ${chalk.yellow(JSON.stringify(rule, null, 4))}
 }
 
 const errorReport = [];
+const jsonFileNamesExtPackage = await configFiles();
 for await (const fileName of jsonFileNamesExtPackage) {
     const content = JSON.parse(await fs.promises.readFile(fileName));
     if (!content.packageRules) {
@@ -98,7 +92,7 @@ if (errorReport.length > 0) {
     console.error(chalk.red.inverse("FAIL"))
     process.exit(1)
 } else {
-    console.log('All Regex look used in "allowedVersions" and "matchPackagePatterns" look valid. ✅');
+    console.log(chalk.inverse.green('SUCCESS'), 'All Regex look used in "allowedVersions" and "matchPackagePatterns" look valid! ✅');
     process.exit(0)
 }
 
