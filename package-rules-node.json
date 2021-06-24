@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["eslint", "stylelint", "prettier"],
-      "matchPackagePatterns": ["^eslint", "^stylelint", "^prettier"],
+      "matchPackagePatterns": ["^eslint", "^stylelint", "^prettier", "^@typescript-eslint/"],
       "groupName": "frontend - lint"
     },
     {
@@ -33,6 +33,10 @@
       "matchPackageNames": ["rollup"],
       "matchPackagePatterns": ["^@rollup/", "^rollup"],
       "groupName": "frontend - rollup"
+    },
+    {
+      "matchPackagePatterns": ["^@testing-library/"],
+      "groupName": "frontend - Testing Library"
     }
   ]
 }
