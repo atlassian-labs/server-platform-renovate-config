@@ -13,7 +13,7 @@ The [backend preset](./backend.json) you can use in Maven and Java codebase:
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>atlassian-labs/server-platform-renovate-config:frontend"
+    "github>atlassian-labs/server-platform-renovate-config:backend"
   ]
 }
 ```
