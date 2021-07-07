@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "bbUseDefaultReviewers": false,
+  "reviewersSampleSize": 1,
+  "reviewers": [
+    "ReviewTaggingBot"
+  ]
+}
