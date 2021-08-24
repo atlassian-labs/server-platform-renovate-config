@@ -61,7 +61,7 @@
     },
     {
       "matchPackageNames": ["org.reflections:reflections"],
-      "allowedVersions": "!/0.9.12/"
+      "allowedVersions": "!/^0.9.12$/"
     }
   ]
 }
