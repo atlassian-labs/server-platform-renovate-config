@@ -3,14 +3,17 @@
   "bbUseDefaultReviewers": false,
   "reviewersSampleSize": 2,
   "reviewers": [
-    "aswan",
-    "bmaccarthy",
+    "rmadireddi",
+    "bhazra",
+    "astephen3",
+    "mbaig",
+    "nghanta",
+    "bsingh4",
     "ablekhman",
     "wcustodio",
     "cwilliams",
     "mwieclawska",
     "mtokarski",
-    "msmolczewski",
     "zstruczewska"
   ]
 }
