@@ -6,8 +6,5 @@
     "github>atlassian-labs/server-platform-renovate-config:package-rules-node",
     "github>atlassian-labs/server-platform-renovate-config:package-rules-maven",
     "github>atlassian-labs/server-platform-renovate-config:backend-reviewers-bbc"
-  ],
-  "minor": {
-    "enabled": false
-  }
+  ]
 }
