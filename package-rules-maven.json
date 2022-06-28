@@ -8,6 +8,7 @@
         "jaxen:jaxen",
         "log4j:log4j",
         "opensymphony:oscore",
+        "org.apache.velocity:velocity",
         "^org.codehaus.jackson"
       ],
       "allowedVersions": "/.+-atlassian-[0-9]+$/"
