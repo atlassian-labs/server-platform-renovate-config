@@ -4,7 +4,6 @@
     {
       "matchPackagePatterns": [
         "commons-httpclient:commons-httpclient",
-        "dom4j:dom4j",
         "jaxen:jaxen",
         "log4j:log4j",
         "opensymphony:oscore",
