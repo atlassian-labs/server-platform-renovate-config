@@ -10,7 +10,7 @@
         "org.apache.velocity:velocity",
         "^org.codehaus.jackson"
       ],
-      "allowedVersions": "/.+-atlassian-[0-9]+$/"
+      "allowedVersions": "/.+[0-9]+-atlassian-[0-9]+$/"
     },
     {
       "matchPackagePatterns": [
