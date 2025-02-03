@@ -2,9 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     ":disableMajorUpdates",
-    "github>atlassian-labs/server-platform-renovate-config:common",
-    "github>atlassian-labs/server-platform-renovate-config:package-rules-node",
-    "github>atlassian-labs/server-platform-renovate-config:package-rules-maven",
-    "github>atlassian-labs/server-platform-renovate-config:backend-reviewers-bbc"
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/common.json",
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/package-rules-node.json",
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/package-rules-maven.json",
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/backend-reviewers-bbc.json"
   ]
 }

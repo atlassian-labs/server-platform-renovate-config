@@ -13,7 +13,7 @@ The [backend preset](./backend.json) you can use in Maven and Java codebase:
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>atlassian-labs/server-platform-renovate-config:backend"
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/backend.json"
   ]
 }
 ```
@@ -27,7 +27,7 @@ The [frontend preset](./frontend.json) you can use in JavaScript, TypeScript, an
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>atlassian-labs/server-platform-renovate-config:frontend"
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/frontend.json"
   ]
 }
 ```
@@ -39,8 +39,8 @@ You can combine as many Renovate presets as you want:
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>atlassian-labs/server-platform-renovate-config:backend",
-    "github>atlassian-labs/server-platform-renovate-config:frontend",
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/backend.json",
+    "https://bitbucket.org/server-platform/server-platform-renovate-config/raw/main/frontend.json",
     "packages:linters",
     "packages:jsTest"
   ]
