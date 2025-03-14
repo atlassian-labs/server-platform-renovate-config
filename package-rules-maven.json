@@ -60,6 +60,10 @@
     {
       "matchPackageNames": ["org.reflections:reflections"],
       "allowedVersions": "!/^0.9.12$/"
+    },
+    {
+      "matchPackageNames": ["com.google.guava:guava"],
+      "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(-(?<compatibility>.*))?$"
     }
   ]
 }
