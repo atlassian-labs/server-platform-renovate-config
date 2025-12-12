@@ -2,14 +2,22 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "groupName": "Atlaskit",
+      "groupName": "Frontend - Atlaskit",
+      "description": "Atlassian UI library packages",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "prPriority": 1,
       "separateMajorMinor": false,
       "enabled": true
+    },
+    {
+      "groupName": "Frontend - React",
+      "description": "Atlassian React plugin wrapping React for unit testing",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
+      "enabled": true
     }
   ],
-  "postUpdateOptions": ["npmDedupe"],
+  "postUpdateOptions": ["npmDedupe", "yarnDedupeHighest"],
   "branchPrefix": "test/renovate-"
 }
