@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Atlaskit",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^@atlaskit/"],
+      "prPriority": 1,
+      "separateMajorMinor": false,
+      "enabled": true
+    }
+  ],
+  "postUpdateOptions": ["npmDedupe"],
+  "branchPrefix": "test/renovate-"
+}
