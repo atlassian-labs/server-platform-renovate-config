@@ -13,7 +13,7 @@
       "enabled": true
     },
     {
-      "groupName": "Frontend - Atlaskit - stable branches",
+      "groupName": "Frontend - Atlaskit",
       "description": "Enable minor and patch upgrades of Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
