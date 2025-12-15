@@ -5,28 +5,18 @@
       "groupName": "frontend - atlaskit",
       "description": "Enable all upgrades of Atlassian UI library packages on default branch",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["@atlaskit/**"],
-      "matchBaseBranches": ["/^main$/", "/^master$/"],
+      "matchPackagePatterns": ["/^@atlaskit/"],
+      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
       "enabled": true
     },
     {
-      "groupName": "frontend - atlaskit - stable branches",
-      "description": "Enable minor and patch upgrades of Atlassian UI library packages on stable branches",
-      "matchManagers": ["npm"],
-      "matchPackagePatterns": ["@atlaskit/**"],
-      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "separateMajorMinor": true,
-      "enabled": true
-    },
-    {
       "groupName": "frontend - atlaskit - stable branches - disable major",
       "description": "Disable major upgrades of Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["@atlaskit/**"],
+      "matchPackagePatterns": ["/^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major"],
       "enabled": false
