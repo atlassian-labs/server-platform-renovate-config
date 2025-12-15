@@ -3,24 +3,23 @@
   "packageRules": [
     {
       "groupName": "Frontend - Atlaskit",
-      "description": "Enable all upgrades of Atlassian UI library packages on default branch",
+      "description": "Enable all upgrades of Atlassian UI library packages",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
-      "matchBaseBranches": ["/^main$/", "/^master$/"],
+      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
       "enabled": true
     },
     {
-      "groupName": "Frontend - Atlaskit",
-      "description": "Enable minor and patch upgrades of Atlassian UI library packages on stable branches",
+      "groupName": "Frontend - Atlaskit - stable branches",
+      "description": "Disable major upgrades of Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "separateMajorMinor": false,
-      "enabled": true
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     },
     {
       "groupName": "Frontend - React plugin",
