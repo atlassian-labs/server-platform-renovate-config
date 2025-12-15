@@ -2,8 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "groupName": "Frontend - Atlaskit - main branch",
-      "description": "Atlassian UI library packages",
+      "groupName": "Frontend - Atlaskit",
+      "description": "Atlassian UI library packages on default branch",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["main", "master"],
@@ -13,8 +13,8 @@
       "enabled": true
     },
     {
-      "groupName": "Frontend - Atlaskit - stable branches",
-      "description": "Atlassian UI library packages",
+      "groupName": "Frontend - Atlaskit",
+      "description": "Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
@@ -23,7 +23,7 @@
     },
     {
       "groupName": "Frontend - React plugin",
-      "description": "Atlassian React plugin wrapping platform version React library and its common dependencies. https://bitbucket.org/atlassian/atlassian-plugins-react",
+      "description": "Atlassian React plugin wrapping platform version React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
