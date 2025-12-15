@@ -2,18 +2,28 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "groupName": "Frontend - Atlaskit",
-      "description": "Enable all upgrades of Atlassian UI library packages",
+      "groupName": "frontend - atlaskit",
+      "description": "Enable all upgrades of Atlassian UI library packages on default branch",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
-      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
+      "matchBaseBranches": ["/^main$/", "/^master$/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
       "enabled": true
     },
     {
-      "groupName": "Frontend - Atlaskit - stable branches",
+      "groupName": "frontend - atlaskit - stable branches",
+      "description": "Enable minor and patch upgrades of Atlassian UI library packages on stable branches",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^@atlaskit/"],
+      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "separateMajorMinor": true,
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - atlaskit - stable branches - disable major",
       "description": "Disable major upgrades of Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
@@ -22,7 +32,7 @@
       "enabled": false
     },
     {
-      "groupName": "Frontend - React plugin",
+      "groupName": "frontend - React plugin",
       "description": "Atlassian React plugin wrapping platform version React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch"],
@@ -30,7 +40,7 @@
       "enabled": true
     },
     {
-      "groupName": "Frontend - React",
+      "groupName": "frontend - React",
       "description": "React library and its common dependencies",
       "matchManagers": ["npm"],
       "matchBaseBranches": ["/^main$/", "/^master$/"],
