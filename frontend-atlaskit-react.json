@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Frontend - Atlaskit - main branch",
+      "description": "Atlassian UI library packages",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^@atlaskit/"],
+      "matchBaseBranches": ["main", "master"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "prPriority": 1,
+      "separateMajorMinor": false,
+      "enabled": true
+    },
+    {
+      "groupName": "Frontend - Atlaskit - stable branches",
+      "description": "Atlassian UI library packages",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^@atlaskit/"],
+      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "enabled": true
+    },
+    {
+      "groupName": "Frontend - React plugin",
+      "description": "Atlassian React plugin wrapping platform version React library and its common dependencies. https://bitbucket.org/atlassian/atlassian-plugins-react",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
+      "enabled": true
+    },
+    {
+      "groupName": "Frontend - React",
+      "description": "React library and its common dependencies",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["react", "react-dom"],
+      "rangeStrategy": "pin",
+      "matchNewValue": "18.3.1",
+      "matchBaseBranches": ["master", "main"],
+      "enabled": true
+    }
+  ],
+  "postUpdateOptions": ["npmDedupe", "yarnDedupeHighest"]
+}
