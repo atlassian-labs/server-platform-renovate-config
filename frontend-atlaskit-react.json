@@ -19,6 +19,7 @@
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["minor", "patch"],
+      "separateMajorMinor": false,
       "enabled": true
     },
     {
@@ -33,10 +34,11 @@
       "groupName": "Frontend - React",
       "description": "React library and its common dependencies",
       "matchManagers": ["npm"],
+      "matchBaseBranches": ["/^main$/", "/^master$/"],
       "matchPackageNames": ["react", "react-dom"],
       "rangeStrategy": "pin",
       "matchNewValue": "18.3.1",
-      "baseBranches": ["main", "master"],
+      "separateMajorMinor": false,
       "enabled": true
     }
   ],
