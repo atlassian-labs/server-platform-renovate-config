@@ -6,7 +6,7 @@
       "description": "Atlassian UI library packages on default branch",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
-      "baseBranches": ["main", "master"],
+      "matchBaseBranches": ["/^main$/", "/^master$/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
