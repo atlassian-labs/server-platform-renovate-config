@@ -3,10 +3,10 @@
   "packageRules": [
     {
       "groupName": "frontend - atlaskit",
-      "description": "Enable all upgrades of Atlassian UI library packages on default branch",
+      "description": "Enable all upgrades of Atlassian UI library packages on all branches",
       "matchManagers": ["npm"],
       "matchPackageNames": ["/^@atlaskit/"],
-      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
+      "matchBaseBranches": ["main", "master", "/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
@@ -25,7 +25,6 @@
       "groupName": "frontend - react plugin",
       "description": "Atlassian React plugin wrapping platform version React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
       "matchManagers": ["npm"],
-      "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
       "enabled": true
     },
