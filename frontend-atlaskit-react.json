@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "groupName": "Frontend - Atlaskit",
-      "description": "Atlassian UI library packages on default branch",
+      "description": "Enable all upgrades of Atlassian UI library packages on default branch",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["/^main$/", "/^master$/"],
@@ -14,7 +14,7 @@
     },
     {
       "groupName": "Frontend - Atlaskit - stable branches",
-      "description": "Atlassian UI library packages on stable branches",
+      "description": "Enable minor and patch upgrades of Atlassian UI library packages on stable branches",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
