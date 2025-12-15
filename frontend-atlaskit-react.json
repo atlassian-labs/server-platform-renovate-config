@@ -23,14 +23,14 @@
     },
     {
       "groupName": "frontend - react plugin",
-      "description": "Atlassian React plugin wrapping platform version React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
+      "description": "Upgrade Atlassian React plugin platform wrapper for React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
       "matchManagers": ["npm"],
       "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
       "enabled": true
     },
     {
       "groupName": "frontend - react package",
-      "description": "React library and its common dependencies",
+      "description": "Upgrade React library and its common dependencies to pinned platform version",
       "matchManagers": ["npm"],
       "matchBaseBranches": ["/^main$/", "/^master$/"],
       "matchPackageNames": ["react", "react-dom"],
