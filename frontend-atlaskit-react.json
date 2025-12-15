@@ -25,6 +25,7 @@
       "groupName": "frontend - react plugin",
       "description": "Upgrade Atlassian React plugin platform wrapper for React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
       "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
       "enabled": true
     },
