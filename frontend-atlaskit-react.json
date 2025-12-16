@@ -1,0 +1,58 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "frontend - atlaskit",
+      "description": "Enable all upgrades of Atlassian UI library packages on all branches",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["/^@atlaskit/"],
+      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "prPriority": 1,
+      "separateMajorMinor": false,
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - atlaskit - stable branches - disable major",
+      "description": "Disable major upgrades of Atlassian UI library packages on stable branches",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["/^@atlaskit/"],
+      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "groupName": "frontend - react plugin",
+      "description": "Upgrade Atlassian React plugin platform wrapper for React library and its common dependencies (https://bitbucket.org/atlassian/atlassian-plugins-react)",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@atlassian/atlassian-plugins-react"],
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - react package",
+      "description": "Upgrade React library and its common dependencies to pinned platform version",
+      "matchManagers": ["npm"],
+      "matchBaseBranches": ["/^main$/", "/^master$/"],
+      "matchPackageNames": ["react", "react-dom"],
+      "rangeStrategy": "pin",
+      "matchNewValue": "18.3.1",
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - react package - stable branches",
+      "description": "Upgrade React library and its common dependencies to latest minor and patch on stable branches",
+      "matchManagers": ["npm"],
+      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
+      "matchPackageNames": ["react", "react-dom"],
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - react package - disable major",
+      "description": "Disable upgrade React library and its common dependencies to new major version",
+      "matchPackageNames": ["react", "react-dom"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ],
+  "postUpdateOptions": ["npmDedupe", "yarnDedupeHighest"]
+}
