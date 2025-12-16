@@ -37,6 +37,21 @@
       "rangeStrategy": "pin",
       "matchNewValue": "18.3.1",
       "enabled": true
+    },
+    {
+      "groupName": "frontend - react package - stable branches",
+      "description": "Upgrade React library and its common dependencies to latest minor and patch on stable branches",
+      "matchManagers": ["npm"],
+      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
+      "matchPackageNames": ["react", "react-dom"],
+      "enabled": true
+    },
+    {
+      "groupName": "frontend - react package - disable major",
+      "description": "Disable upgrade React library and its common dependencies to new major version",
+      "matchPackageNames": ["react", "react-dom"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ],
   "postUpdateOptions": ["npmDedupe", "yarnDedupeHighest"]
