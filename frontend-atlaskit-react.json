@@ -36,8 +36,14 @@
       "matchPackageNames": ["react", "react-dom"],
       "rangeStrategy": "pin",
       "matchNewValue": "18.3.1",
-      "separateMajorMinor": false,
       "enabled": true
+    },
+    {
+      "groupName": "frontend - react package - disable major",
+      "description": "Disable upgrade React library and its common dependencies to new major version",
+      "matchPackageNames": ["react", "react-dom"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ],
   "postUpdateOptions": ["npmDedupe", "yarnDedupeHighest"]
