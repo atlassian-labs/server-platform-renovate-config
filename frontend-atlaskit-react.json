@@ -6,20 +6,10 @@
       "description": "Enable all upgrades of Atlassian UI library packages on all branches",
       "matchManagers": ["npm"],
       "matchPackageNames": ["/^@atlaskit/"],
-      "matchBaseBranches": ["/^main$/", "/^master$/"],
+      "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
-      "enabled": true
-    },
-    {
-      "groupName": "frontend - atlaskit - stable branches",
-      "description": "Disable major upgrades of Atlassian UI library packages on stable branches",
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["/^@atlaskit/"],
-      "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "separateMajorMinor": true,
       "enabled": true
     },
     {
@@ -29,7 +19,6 @@
       "matchPackageNames": ["/^@atlaskit/"],
       "matchBaseBranches": ["/^stable\\/.*/", "/^release\\/.*/"],
       "matchUpdateTypes": ["major"],
-      "separateMajorMinor": true,
       "enabled": false
     },
     {
