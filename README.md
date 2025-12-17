@@ -2,4 +2,4 @@
 
 DO NOT USE THIS REPOSITORY
 
-This repository has been moved to [Bitbucket](https://bitbucket.org/server-platform/server-platform-renovate-config/src/main/)
+This repository has been moved to [Bitbucket](https://bitbucket.org/atlassian/dc-platform-renovate-config/src/main/)
