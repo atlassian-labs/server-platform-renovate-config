@@ -2,6 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "groupName": "patches"
+    },
+    {
       "groupName": "frontend - atlaskit",
       "description": "Enable all upgrades of Atlassian UI library packages on all branches",
       "matchManagers": ["npm"],
@@ -10,6 +16,7 @@
       "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
+      "separateMinorPatch": false,
       "enabled": true
     },
     {
