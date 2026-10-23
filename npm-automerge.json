@@ -1,21 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Semi-automated FE Renovate upgrades: mark npm dependencies for auto merge by default and keep a human in the loop only for the 'Common across DC' cases from https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. The merge is done by renovate-automerger, which merges on the [renovate:auto-merge] commit marker alone; Renovate's own automerge is not used. So commitBody is the only switch: the default rule sets the marker, every opt-out rule resets it with commitBody: [renovate:manual-merge].",
+  "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker.",
   "packageRules": [
     {
-      "description": "Mark FE dependencies for auto merge by default. Everything that must keep a human in the loop is opted back out below by resetting commitBody. The bar for opting out is that a human would intervene even on a green build.",
+      "description": "Most bumps need no human, so they merge and notify nobody.",
       "matchManagers": ["npm"],
       "commitBody": "[renovate:auto-merge]"
     },
     {
-      "description": "Public API and platform versioned. These follow SemVer well, so minor and patch upgrades auto merge, but major upgrades require coordination across DC.",
+      "description": "Public API and platform versioned, so a major bump needs coordination across DC.",
       "matchManagers": ["npm"],
       "matchPackageNames": ["react", "react-dom", "@types/react", "jquery", "jquery-aop", "underscore", "lodash"],
       "matchUpdateTypes": ["major"],
       "commitBody": "[renovate:manual-merge]"
     },
     {
-      "description": "Public API and platform versioned, and not reliably SemVer (almond is still 0.x), so minor upgrades can contain breaking changes as well.",
+      "description": "Public API and platform versioned, and not reliably SemVer, so minor bumps need coordination too.",
       "matchManagers": ["npm"],
       "matchPackageNames": [
         "almond",
@@ -31,14 +31,14 @@
       "commitBody": "[renovate:manual-merge]"
     },
     {
-      "description": "Any dependency still at 0.x: per SemVer minor upgrades can contain breaking changes.",
+      "description": "0.x has no SemVer promise, so minor upgrades can break.",
       "matchManagers": ["npm"],
       "matchCurrentVersion": "/^0\\./",
       "matchUpdateTypes": ["minor", "major"],
       "commitBody": "[renovate:manual-merge]"
     },
     {
-      "description": "Atlassian owned, without security problems or transitive dependencies, so there is no reason to upgrade. Renovate does not even raise PRs.",
+      "description": "Upgrading gains nothing: Atlassian owned, no security issues, no transitive deps.",
       "matchManagers": ["npm"],
       "matchPackageNames": ["skatejs*", "@skatejs/*"],
       "enabled": false
