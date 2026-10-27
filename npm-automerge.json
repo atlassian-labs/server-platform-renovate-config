@@ -1,0 +1,53 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}.",
+  "packageRules": [
+    {
+      "description": "Most bumps need no human, so they merge and notify nobody.",
+      "matchManagers": ["npm"],
+      "commitBody": "[renovate:auto-merge]",
+      "bbUseDefaultReviewers": false,
+      "reviewersFromCodeOwners": false,
+      "reviewers": []
+    },
+    {
+      "description": "Public API and platform versioned, so a major bump needs coordination across DC.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["react", "react-dom", "@types/react", "jquery", "jquery-aop", "underscore", "lodash"],
+      "matchUpdateTypes": ["major"],
+      "commitBody": "[renovate:manual-merge]",
+      "reviewersFromCodeOwners": true
+    },
+    {
+      "description": "Public API and platform versioned, and not reliably SemVer, so minor bumps need coordination too.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "almond",
+        "@atlassian/aui",
+        "@atlassian/clientside-extensions",
+        "@atlassian/clientside-extensions-base",
+        "@atlassian/clientside-extensions-components",
+        "@atlassian/clientside-extensions-debug",
+        "@atlassian/clientside-extensions-registry",
+        "@atlassian/clientside-extensions-schema"
+      ],
+      "matchUpdateTypes": ["minor", "major"],
+      "commitBody": "[renovate:manual-merge]",
+      "reviewersFromCodeOwners": true
+    },
+    {
+      "description": "0.x has no SemVer promise, so minor upgrades can break.",
+      "matchManagers": ["npm"],
+      "matchCurrentVersion": "/^0\\./",
+      "matchUpdateTypes": ["minor", "major"],
+      "commitBody": "[renovate:manual-merge]",
+      "reviewersFromCodeOwners": true
+    },
+    {
+      "description": "Upgrading gains nothing: Atlassian owned, no security issues, no transitive deps.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["skatejs*", "@skatejs/*"],
+      "enabled": false
+    }
+  ]
+}
