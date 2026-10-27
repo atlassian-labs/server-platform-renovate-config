@@ -12,7 +12,7 @@ for await (const file of await configFiles()) {
         await $`RENOVATE_CONFIG_FILE=${file} node_modules/.bin/renovate-config-validator`;
         console.log(`✅ "${file}" validated!`);
     } catch (e) {
-        console.log(`❌ Checking "${file}" failed:\n`, chalk.red(e.stdout.split('ERROR:')[1]));
+        console.log(`❌ Checking "${file}" failed:\n`, chalk.red(e.stdout));
         failed = true;
     }
 }

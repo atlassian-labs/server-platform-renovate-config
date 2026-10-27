@@ -1,9 +1,12 @@
-import { isConfigRegex } from 'renovate/dist/util/regex.js';
 import fs from 'fs';
 import chalk from 'chalk';
 import RE2 from 're2';
 
 import { configFiles } from './util.mjs';
+
+const isConfigRegex = (value) => {
+    return ["/", "!/"].some(prefix => value.startsWith(prefix)) && value.endsWith("/");
+}
 
 const toArray = (arrOrStringOrVoid) => {
     if (!arrOrStringOrVoid) {
@@ -74,7 +77,10 @@ for await (const fileName of jsonFileNamesExtPackage) {
         // allowedVersions are checked for regex via util method "isConfigRegex"
         const allowErrors = checkAllowPatterns(rule.allowedVersions);
         // matchPackagePatterns are all treated as potential regexp and need a different check mechanism
-        const packageErrors = checkRegexPatterns(rule.matchPackagePatterns);
+        const packageErrors = [
+            ...checkRegexPatterns(rule.matchPackagePatterns),
+            ...checkRegexPatterns(rule.matchPackageNames)
+        ];
         return formatRuleError(rule, allowErrors, packageErrors);
     }).filter(Boolean);
 
