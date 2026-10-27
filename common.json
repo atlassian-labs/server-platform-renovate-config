@@ -4,6 +4,7 @@
     "config:base",
     "schedule:weekends"
   ],
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
   "fetchReleaseNotes": false,
   "separateMinorPatch": true,
   "branchTopic": "{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}.n{{#if isLockfileUpdate}}-lockfile{{/if}}",

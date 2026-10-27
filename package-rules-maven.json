@@ -8,7 +8,8 @@
         "log4j:log4j",
         "opensymphony:oscore",
         "org.apache.velocity:velocity",
-        "^org.codehaus.jackson"
+        "^org.codehaus.jackson",
+        "^org.eclipse.gemini.blueprint"
       ],
       "allowedVersions": "/.+[0-9]+-atlassian-[0-9]+$/"
     },
@@ -22,9 +23,19 @@
     {
       "matchPackagePatterns": [
         "com.google.code.findbugs:annotations",
-        "biz.aQute.bnd:biz.aQute.bndlib"
+        "biz.aQute.bnd:biz.aQute.bndlib",
+        "io.atlassian.util.concurrent:atlassian-util-concurrent"
       ],
       "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
+    },
+    {
+      "description": "Artifactory's maven-internal virtual repo proxies HeroDevs NES, whose builds are versioned <base>-<project>-<version>[-trial], e.g. 6.2.19-spring-framework-6.2.20-trial. Maven ranks unknown qualifiers above the bare release, so without this Renovate offers them as patch upgrades.",
+      "matchPackageNames": [
+        "org.springframework:*",
+        "org.springframework.security:*",
+        "org.springframework.ldap:*"
+      ],
+      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+(-atlassian-\\d+)?$/"
     },
     {
       "matchPackageNames": [
@@ -32,6 +43,11 @@
         "org.springframework:org.springframework.context"
       ],
       "allowedVersions": "!/2.5.6/"
+    },
+    {
+      "matchPackageNames": ["org.springframework.*"],
+      "updateTypes": ["major"],
+      "enabled": false
     },
     {
       "matchPackageNames": ["com.microsoft.sqlserver:mssql-jdbc"],
@@ -58,8 +74,36 @@
       "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
     },
     {
+      "matchPackageNames": ["jakarta.inject:jakarta.inject-api"],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+$/"
+    },
+    {
       "matchPackageNames": ["org.reflections:reflections"],
       "allowedVersions": "!/^0.9.12$/"
+    },
+    {
+      "matchPackageNames": ["com.google.guava:guava"],
+      "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(-(?<compatibility>.*))?$"
+    },
+    {
+      "matchPackageNames": ["com.github.eirslett:frontend-maven-plugin"],
+      "allowedVersions": "/^1\\.15\\.4-atlassian-\\d+$/",
+      "description": "Only allow our 1.15.4-atlassian fork releases. Renovate otherwise proposes 1.15.10, which was released by mistake, while 1.15.4 is the latest upstream version we currently extend. Once 2.0 is released, this regex can be made generic again."
+    },
+    {
+      "matchPackageNames": ["/^tools\\.jackson\\./"],
+      "allowedVersions": "/^3\\.1\\./",
+      "description": "Jackson 3.1.x is LTS (tools.jackson), do not bump to 3.2+."
+    },
+    {
+      "description": "net.bytebuddy publishes a -jdk5 build of each release for pre-JDK8 environments. Maven ranks the unknown qualifier above the bare version, so Renovate offers 1.18.13-jdk5 in place of 1.18.13.",
+      "matchPackageNames": ["net.bytebuddy:*"],
+      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
+    },
+    {
+      "description": "2.7.3-atlassian-hosted is a byte-identical rehost of 2.7.3 on packages.atlassian.com, still flagged as vulnerable by scanners. Maven ranks the unknown qualifier above the bare version, so Renovate offers it as a patch upgrade.",
+      "matchPackageNames": ["xalan:xalan", "xalan:serializer"],
+      "allowedVersions": "!/-atlassian-hosted$/"
     }
   ]
 }
