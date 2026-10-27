@@ -3,8 +3,7 @@
   "extends": [
     "github>atlassian-labs/server-platform-renovate-config:common",
     "github>atlassian-labs/server-platform-renovate-config:package-rules-node",
-    "github>atlassian-labs/server-platform-renovate-config:package-rules-maven",
-    "github>atlassian-labs/server-platform-renovate-config:frontend-reviewers-bbc"
+    "github>atlassian-labs/server-platform-renovate-config:package-rules-maven"
   ],
   "branchPrefix": "issue/renovate-"
 }
