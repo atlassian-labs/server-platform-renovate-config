@@ -11,6 +11,11 @@
       "reviewers": []
     },
     {
+      "description": "Auto-merge must not take a fresh release, so malicious or broken versions get pulled first.",
+      "matchManagers": ["npm"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
       "description": "Public API and platform versioned, so a major bump needs coordination across DC.",
       "matchManagers": ["npm"],
       "matchPackageNames": ["react", "react-dom", "@types/react", "jquery", "jquery-aop", "underscore", "lodash"],
