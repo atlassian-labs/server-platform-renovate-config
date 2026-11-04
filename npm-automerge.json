@@ -49,6 +49,13 @@
       "reviewersFromCodeOwners": true
     },
     {
+      "description": "Disable Backbone major and minor upgrades.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["backbone"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
       "description": "Upgrading gains nothing: Atlassian owned, no security issues, no transitive deps.",
       "matchManagers": ["npm"],
       "matchPackageNames": ["skatejs*", "@skatejs/*"],
