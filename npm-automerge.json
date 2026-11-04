@@ -3,9 +3,11 @@
   "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}.",
   "packageRules": [
     {
-      "description": "Most bumps need no human, so they merge and notify nobody.",
+      "description": "Most bumps need no human, so they merge and notify nobody. The codeowners PR forge app skips titles with [NO-CODEOWNERS] and matches case-sensitive, so no lowercasing.",
       "matchManagers": ["npm"],
+      "commitMessageLowerCase": "never",
       "commitBody": "[renovate:auto-merge]",
+      "commitMessageSuffix": "[NO-CODEOWNERS]",
       "bbUseDefaultReviewers": false,
       "reviewersFromCodeOwners": false,
       "reviewers": []
@@ -16,6 +18,7 @@
       "matchPackageNames": ["react", "react-dom", "@types/react", "jquery", "jquery-aop", "underscore", "lodash"],
       "matchUpdateTypes": ["major"],
       "commitBody": "[renovate:manual-merge]",
+      "commitMessageSuffix": "",
       "reviewersFromCodeOwners": true
     },
     {
@@ -33,6 +36,7 @@
       ],
       "matchUpdateTypes": ["minor", "major"],
       "commitBody": "[renovate:manual-merge]",
+      "commitMessageSuffix": "",
       "reviewersFromCodeOwners": true
     },
     {
@@ -41,6 +45,7 @@
       "matchCurrentVersion": "/^0\\./",
       "matchUpdateTypes": ["minor", "major"],
       "commitBody": "[renovate:manual-merge]",
+      "commitMessageSuffix": "",
       "reviewersFromCodeOwners": true
     },
     {
