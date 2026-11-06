@@ -53,7 +53,6 @@ Presets combine with each other and with Renovate's built-in presets:
 | `package-rules-node` | groups lint, test, babel, webpack and rollup packages; includes `frontend-atlaskit-react` |
 | `frontend-atlaskit-react` | Atlaskit and React upgrade rules per branch type |
 | `npm-automerge` | marks npm bumps for renovate-automerger, keeps a human only on the "Common across DC" cases |
-| `backend-reviewers-bbs` | reviewer list for Bitbucket Server repositories |
 
 ## Development
 
