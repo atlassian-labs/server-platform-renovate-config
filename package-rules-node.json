@@ -1,5 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:frontend-atlaskit-react"
+  ],
   "packageRules": [
     {
       "matchPackageNames": ["eslint", "stylelint", "prettier"],

@@ -4,6 +4,7 @@
     "config:base",
     "schedule:weekends"
   ],
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
   "fetchReleaseNotes": false,
   "minimumReleaseAge": "3 days",
   "separateMinorPatch": true,

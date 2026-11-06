@@ -7,7 +7,6 @@
       "matchManagers": ["npm"],
       "matchPackageNames": ["/^@atlaskit/"],
       "matchBaseBranches": ["/^main$/", "/^master$/", "/^stable\\/.*/", "/^release\\/.*/"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
       "prPriority": 1,
       "separateMajorMinor": false,
       "enabled": true

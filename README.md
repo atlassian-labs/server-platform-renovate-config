@@ -1,5 +1,63 @@
 # Atlassian DC Platform Renovate config
 
-DO NOT USE THIS REPOSITORY
+Shared [Renovate config presets](https://docs.renovatebot.com/config-presets/) for Atlassian DC platform / product repositories.
 
-This repository has been moved to [Bitbucket](https://bitbucket.org/atlassian/dc-platform-renovate-config/src/main/)
+## Usage
+
+### Backend (Maven / Java)
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:backend"
+  ]
+}
+```
+
+### Frontend (JavaScript / TypeScript / Node)
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:frontend"
+  ]
+}
+```
+
+Presets combine with each other and with Renovate's built-in presets:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>atlassian-labs/server-platform-renovate-config:frontend",
+    "github>atlassian-labs/server-platform-renovate-config:npm-automerge",
+    "packages:linters",
+    "packages:jsTest"
+  ]
+}
+```
+
+## Presets
+
+| Preset | Purpose |
+|---|---|
+| `backend` | `common` + node and maven rules, major updates disabled |
+| `frontend` | `common` + node and maven rules, branch prefix `issue/renovate-` |
+| `common` | `config:base`, weekend schedule, patch grouping, OSV summary on the dependency dashboard |
+| `package-rules-maven` | version allow and deny lists for Maven artifacts (Atlassian forks, off-flavour qualifiers) |
+| `package-rules-node` | groups lint, test, babel, webpack and rollup packages; includes `frontend-atlaskit-react` |
+| `frontend-atlaskit-react` | Atlaskit and React upgrade rules per branch type |
+| `npm-automerge` | marks npm bumps for renovate-automerger, keeps a human only on the "Common across DC" cases |
+
+## Development
+
+Node 24 (`nvm use`).
+
+The bot runs Renovate 39.41.0 but `npm test` validates with Renovate 44, so check that any new option already exists in 39. Splunk alerts to Slack will notify us in case of any breaking changes. Heads up: In DCA11Y-4239 we're going to  validate configs against the exact renovate-bot and Stash bot versions in the renovate config validator skill.
+
+1. `npm install`
+2. Edit the `*.json` presets
+3. `npm test` validates every preset and checks regexes against RE2
