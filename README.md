@@ -1,6 +1,6 @@
 # Atlassian Server/DC Platform Renovate config
 
-Shared [Renovate config presets](https://docs.renovatebot.com/config-presets/) for Atlassian Server/DC platform repositories.
+Shared [Renovate config presets](https://docs.renovatebot.com/config-presets/) for Atlassian DC platform / product repositories.
 
 The Bitbucket repository `atlassian/dc-platform-renovate-config` is being archived, do not extend it. 
 
