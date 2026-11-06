@@ -56,6 +56,8 @@ Presets combine with each other and with Renovate's built-in presets:
 
 Node 24 (`nvm use`).
 
+The bot runs Renovate 39.41.0 but `npm test` validates with Renovate 44, so check that any new option already exists in 39. Splunk alerts to Slack will notify us in case of any breaking changes. Heads up: In DCA11Y-4239 we're going to  validate configs against the exact renovate-bot and Stash bot versions in the renovate config validator skill.
+
 1. `npm install`
 2. Edit the `*.json` presets
 3. `npm test` validates every preset and checks regexes against RE2

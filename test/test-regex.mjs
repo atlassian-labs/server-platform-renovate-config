@@ -20,13 +20,15 @@ const toArray = (arrOrStringOrVoid) => {
     return arrOrStringOrVoid;
 }
 
+const stripRegexDelimiters = (value) => value.replace(/^!?\//, '').replace(/\/$/, '');
+
 const checkRegexPatterns = (input) => {
     const inputArr = toArray(input);
 
     let errors = [];
     inputArr.forEach(regexp => {
         try {
-            new RE2(regexp)
+            new RE2(stripRegexDelimiters(regexp))
         } catch(e) {
             errors.push(`Checking regex "${chalk.red(regexp)}" failed with: ${chalk.red(e.message)}`);
         }
@@ -35,7 +37,8 @@ const checkRegexPatterns = (input) => {
     return errors;
 }
 
-const checkAllowPatterns = (input) => {
+// Renovate only treats /.../ and !/.../ values as regex, the rest are exact names or globs.
+const checkConfigRegexPatterns = (input) => {
     const inputArr = toArray(input);
     
     return checkRegexPatterns(inputArr.filter(isConfigRegex));
@@ -57,7 +60,7 @@ ${chalk.yellow(JSON.stringify(rule, null, 4))}
     }
 
     if (packageErrors.length > 0) {
-        error += `${chalk.bold('rule.matchPackagePatterns')} has the following issues:
+        error += `${chalk.bold('rule.matchPackageNames')} has the following issues:
   - ${packageErrors.join('\n  - ')}`
     }
 
@@ -74,13 +77,8 @@ for await (const fileName of jsonFileNamesExtPackage) {
     }
 
     const errors = content.packageRules.map(rule => {
-        // allowedVersions are checked for regex via util method "isConfigRegex"
-        const allowErrors = checkAllowPatterns(rule.allowedVersions);
-        // matchPackagePatterns are all treated as potential regexp and need a different check mechanism
-        const packageErrors = [
-            ...checkRegexPatterns(rule.matchPackagePatterns),
-            ...checkRegexPatterns(rule.matchPackageNames)
-        ];
+        const allowErrors = checkConfigRegexPatterns(rule.allowedVersions);
+        const packageErrors = checkConfigRegexPatterns(rule.matchPackageNames);
         return formatRuleError(rule, allowErrors, packageErrors);
     }).filter(Boolean);
 
@@ -100,7 +98,7 @@ if (errorReport.length > 0) {
     console.error(chalk.red.inverse("FAIL"))
     process.exit(1)
 } else {
-    console.log(chalk.inverse.green('SUCCESS'), 'All Regex look used in "allowedVersions" and "matchPackagePatterns" look valid! ✅');
+    console.log(chalk.inverse.green('SUCCESS'), 'All regex used in "allowedVersions" and "matchPackageNames" look valid! ✅');
     process.exit(0)
 }
 
