@@ -40,6 +40,48 @@
     {
       "matchPackagePatterns": ["^@testing-library/"],
       "groupName": "frontend - Testing Library"
+    },
+    {
+      "description": "Disable minor and major upgrades because Backbone requires coordinated upgrades and thorough testing.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["backbone"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "description": "Disable all upgrades because SkateJS is Atlassian-owned and has no transitive dependencies or known security issues requiring an upgrade.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["skatejs*", "@skatejs/*"],
+      "enabled": false
+    },
+    {
+      "description": "Disable major upgrades because these public API dependencies require version coordination across DC.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["react", "react-dom", "@types/react", "jquery", "jquery-aop", "underscore", "lodash"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "Disable minor and major upgrades because Almond is on 0.x, where even minor upgrades can introduce breaking changes.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["almond"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "description": "Disable minor and major upgrades because these dependencies should stay in version sync with their corresponding P2 plugins.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "@atlassian/aui",
+        "@atlassian/clientside-extensions",
+        "@atlassian/clientside-extensions-base",
+        "@atlassian/clientside-extensions-components",
+        "@atlassian/clientside-extensions-debug",
+        "@atlassian/clientside-extensions-registry",
+        "@atlassian/clientside-extensions-schema"
+      ],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
     }
   ]
 }
