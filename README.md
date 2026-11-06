@@ -56,7 +56,7 @@ Presets combine with each other and with Renovate's built-in presets:
 
 ## Development
 
-Node 22 (`nvm use`).
+Node 24 (`nvm use`).
 
 1. `npm install`
 2. Edit the `*.json` presets
