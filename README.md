@@ -1,4 +1,4 @@
-# Atlassian Server/DC Platform Renovate config
+# Atlassian DC Platform Renovate config
 
 Shared [Renovate config presets](https://docs.renovatebot.com/config-presets/) for Atlassian DC platform / product repositories.
 

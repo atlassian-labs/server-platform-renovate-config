@@ -1,7 +1,7 @@
 {
   "name": "server-platform-renovate-config",
   "version": "1.0.0",
-  "description": "Renovate config used for server platform projects",
+  "description": "Renovate config used for DC platform projects",
   "scripts": {
     "test": "run-s verify:config verify:regex",
     "verify:config": "node test/validate-configs.mjs",
