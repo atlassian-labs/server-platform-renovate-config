@@ -7,6 +7,13 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "fetchReleaseNotes": false,
   "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "statusCheckWhen": {
+    "minimumReleaseAge": "failed"
+  },
+  "statusCheckNames": {
+    "minimumReleaseAge": "renovate/minimum-release-age"
+  },
   "separateMinorPatch": true,
   "branchTopic": "{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}.n{{#if isLockfileUpdate}}-lockfile{{/if}}",
   "packageRules": [
