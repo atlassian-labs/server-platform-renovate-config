@@ -56,7 +56,7 @@ Presets combine with each other and with Renovate's built-in presets:
 
 Node 24 (`nvm use`).
 
-The bot currently runs Renovate 39.41.0. That can change, so check [`RENOVATE_VERSION` in renovate-bot's `scripts/settings.sh`](https://bitbucket.org/atlassian/renovate-bot/src/HEAD/scripts/settings.sh#lines-3) for the live version. `npm test` validates with Renovate 44, so check that any new option already exists in the bot version. Splunk alerts to Slack will notify us in case of any breaking changes. Heads up: In DCA11Y-4239 we're going to  validate configs against the exact renovate-bot and Stash bot versions in the renovate config validator skill.
+The bots currently run Renovate 39.41.0. That can change, so check [`RENOVATE_VERSION` in renovate-bot's `scripts/settings.sh`](https://bitbucket.org/atlassian/renovate-bot/src/HEAD/scripts/settings.sh#lines-3) for the live version. Stash and Bitbucket Cloud use the same version but run on different runners. `npm test` validates with Renovate 44, so check that any new option already exists in the bot version. Splunk alerts to Slack will notify us in case of any breaking changes. Heads up: In DCA11Y-4239 we're going to  validate configs against the exact renovate-bot and Stash bot versions in the renovate config validator skill.
 
 1. `npm install`
 2. Edit the `*.json` presets
