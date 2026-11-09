@@ -5,7 +5,7 @@
   "scripts": {
     "test": "run-s verify:config verify:regex",
     "verify:config": "renovate --version && node test/validate-configs.mjs",
-    "verify:regex": "node test/test-regex.mjs"
+    "verify:regex": "node test/validate-regex.mjs"
   },
   "private": true,
   "devDependencies": {
