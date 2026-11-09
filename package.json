@@ -4,7 +4,7 @@
   "description": "Renovate config used for DC platform projects",
   "scripts": {
     "test": "run-s verify:config verify:regex",
-    "verify:config": "node test/validate-configs.mjs",
+    "verify:config": "renovate --version && node test/validate-configs.mjs",
     "verify:regex": "node test/test-regex.mjs"
   },
   "private": true,
@@ -12,7 +12,7 @@
     "chalk": "^5.6.2",
     "npm-run-all": "^4.1.5",
     "re2": "^1.22.3",
-    "renovate": "^44.178.3",
+    "renovate": "43.200.1",
     "zx": "^8.8.5"
   }
 }
