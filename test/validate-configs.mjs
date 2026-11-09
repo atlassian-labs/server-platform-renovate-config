@@ -27,7 +27,7 @@ let failed = false;
 for await (const file of await configFiles()) {
     try {
         const configFile = await withBaseBranchStub(file);
-        await $`RENOVATE_CONFIG_FILE=${configFile} node_modules/.bin/renovate-config-validator`;
+        await $`RENOVATE_CONFIG_FILE=${configFile} renovate-config-validator`;
         console.log(`✅ "${file}" validated!`);
     } catch (e) {
         console.log(`❌ Checking "${file}" failed:\n`, chalk.red(e.stdout));
