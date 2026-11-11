@@ -50,7 +50,7 @@ Presets combine with each other and with Renovate's built-in presets:
 | `package-rules-maven` | version allow and deny lists for Maven artifacts (Atlassian forks, off-flavour qualifiers) |
 | `package-rules-node` | groups lint, test, babel, webpack and rollup packages; includes `frontend-atlaskit-react` |
 | `frontend-atlaskit-react` | Atlaskit and React upgrade rules per branch type |
-| `npm-automerge` | marks npm bumps for renovate-automerger, keeps a human only on the "Common across DC" cases |
+| `npm-automerge` | marks npm bumps for renovate-automerger; 0.x minor and major bumps and replacements stay manual |
 
 ## Development
 

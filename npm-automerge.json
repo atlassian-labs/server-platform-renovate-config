@@ -20,6 +20,14 @@
       "commitBody": "[renovate:manual-merge]",
       "commitMessageSuffix": "",
       "reviewersFromCodeOwners": true
+    },
+    {
+      "description": "Require manual merge for replacements because Renovate only swaps the package, while code or config using it (e.g. an eslint parser) still needs a human.",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["replacement"],
+      "commitBody": "[renovate:manual-merge]",
+      "commitMessageSuffix": "",
+      "reviewersFromCodeOwners": true
     }
   ]
 }
