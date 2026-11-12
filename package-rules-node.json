@@ -5,6 +5,11 @@
   ],
   "packageRules": [
     {
+      "matchPackageNames": ["eslint", "stylelint", "prettier"],
+      "matchPackagePatterns": ["^eslint", "^stylelint", "^prettier", "^@typescript-eslint/"],
+      "groupName": "frontend - lint"
+    },
+    {
       "matchPackageNames": ["karma", "mocha", "sinon", "chai"],
       "matchPackagePatterns": ["^karma", "^mocha", "^sinon", "^chai"],
       "groupName": "frontend - test"
@@ -26,11 +31,6 @@
     {
       "matchPackagePatterns": ["^@babel/", "^babel-"],
       "groupName": "frontend - babel"
-    },
-    {
-      "matchPackageNames": ["eslint", "stylelint", "prettier", "babel-eslint", "@babel/eslint-parser", "@babel/eslint-plugin"],
-      "matchPackagePatterns": ["^eslint", "^stylelint", "^prettier", "^@typescript-eslint/"],
-      "groupName": "frontend - lint"
     },
     {
       "matchPackageNames": ["rollup"],
