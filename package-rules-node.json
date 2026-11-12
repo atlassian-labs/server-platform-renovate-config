@@ -20,10 +20,6 @@
       "groupName": "frontend - jest"
     },
     {
-      "matchPackagePatterns": ["^@babel/"],
-      "groupName": "frontend - babel"
-    },
-    {
       "matchPackageNames": [
         "atlassian-webresource-webpack-plugin",
         "mini-css-extract-plugin",
@@ -31,6 +27,14 @@
       ],
       "matchPackagePatterns": ["^webpack", "-loader$"],
       "groupName": "frontend - webpack"
+    },
+    {
+      "matchPackagePatterns": ["^@babel/", "^babel-"],
+      "groupName": "frontend - babel"
+    },
+    {
+      "matchPackageNames": ["babel-eslint", "@babel/eslint-parser", "@babel/eslint-plugin"],
+      "groupName": "frontend - lint"
     },
     {
       "matchPackageNames": ["rollup"],
