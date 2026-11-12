@@ -25,8 +25,8 @@
         "mini-css-extract-plugin",
         "webpack"
       ],
-      "matchPackagePatterns": ["^webpack", "-loader$"],
-      "groupName": "frontend - webpack"
+      "matchPackagePatterns": ["^webpack", "^@rspack/", "^rspack($|-)", "-loader$"],
+      "groupName": "frontend - bundler"
     },
     {
       "matchPackagePatterns": ["^@babel/", "^babel-"],

@@ -48,7 +48,7 @@ Presets combine with each other and with Renovate's built-in presets:
 | `frontend` | `common` + node and maven rules, branch prefix `issue/renovate-` |
 | `common` | `config:base`, weekend schedule, patch grouping, OSV summary on the dependency dashboard |
 | `package-rules-maven` | version allow and deny lists for Maven artifacts (Atlassian forks, off-flavour qualifiers) |
-| `package-rules-node` | groups lint, test, babel, webpack and rollup packages; includes `frontend-atlaskit-react` |
+| `package-rules-node` | groups lint, test, Babel, webpack/Rspack bundler and rollup packages; includes `frontend-atlaskit-react` |
 | `frontend-atlaskit-react` | Atlaskit and React upgrade rules per branch type |
 | `npm-automerge` | marks npm bumps for renovate-automerger, keeps a human only on the "Common across DC" cases |
 
