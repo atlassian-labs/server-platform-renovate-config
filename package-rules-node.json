@@ -42,6 +42,13 @@
       "groupName": "frontend - Testing Library"
     },
     {
+      "description": "Disable Cypress major upgrades.",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["cypress"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
       "description": "Disable minor and major upgrades because Backbone requires coordinated upgrades and thorough testing.",
       "matchManagers": ["npm"],
       "matchPackageNames": ["backbone"],
