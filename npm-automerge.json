@@ -3,23 +3,35 @@
   "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}.",
   "packageRules": [
     {
-      "description": "Mark upgrades for automatic merge by default without requesting reviewers. Preserve the uppercase [NO-CODEOWNERS] title marker because the codeowners PR Forge app matches it case-sensitively. The markers are templates because a group PR takes them from its first upgrade only, so they check that every upgrade in the group is npm and none asks for a manual merge.",
+      "description": "Mark upgrades for automatic merge by default without requesting reviewers. Preserve the uppercase [NO-CODEOWNERS] title marker because the codeowners PR Forge app matches it case-sensitively.",
       "matchManagers": ["npm"],
       "commitMessageLowerCase": "never",
-      "commitBody": "{{#if (includes (lookupArray upgrades 'commitBody') '[renovate:manual-merge]')}}[renovate:manual-merge]{{else if (equals (toJSON (distinct (lookupArray upgrades 'manager'))) '[\"npm\"]')}}[renovate:auto-merge]{{else}}[renovate:manual-merge]{{/if}}",
-      "commitMessageSuffix": "{{#if (includes (lookupArray upgrades 'commitBody') '[renovate:manual-merge]')}}{{else if (equals (toJSON (distinct (lookupArray upgrades 'manager'))) '[\"npm\"]')}}[NO-CODEOWNERS]{{/if}}",
+      "commitBody": "[renovate:auto-merge]",
+      "commitMessageSuffix": "[NO-CODEOWNERS]",
       "bbUseDefaultReviewers": false,
       "reviewersFromCodeOwners": false,
       "reviewers": []
     },
     {
-      "description": "Require manual merge for minor and major upgrades from 0.x because these versions do not guarantee API stability.",
+      "description": "Require manual merge for minor and major upgrades from 0.x because these versions do not guarantee API stability. Grouped manual upgrades get their own PR, because a group PR takes its merge marker from its first upgrade.",
       "matchManagers": ["npm"],
       "matchCurrentVersion": "/^0\\./",
       "matchUpdateTypes": ["minor", "major"],
       "commitBody": "[renovate:manual-merge]",
       "commitMessageSuffix": "",
-      "reviewersFromCodeOwners": true
+      "reviewersFromCodeOwners": true,
+      "group": {
+        "branchTopic": "{{{groupSlug}}}-manual",
+        "commitMessageTopic": "{{{groupName}}} (manual merge)"
+      }
+    },
+    {
+      "description": "Keep non-npm upgrades such as Maven or .nvmrc in their own group PRs. Shared groups like patches span managers, so without this they could land in an npm PR marked for automatic merge.",
+      "matchManagers": ["!npm"],
+      "group": {
+        "branchTopic": "{{{groupSlug}}}-{{{manager}}}",
+        "commitMessageTopic": "{{{groupName}}} ({{{manager}}})"
+      }
     }
   ]
 }
