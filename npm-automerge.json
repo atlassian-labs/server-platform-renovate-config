@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}.",
+  "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}. PRs rebase only on conflicts, so merging one automerge PR does not rebuild every other open one.",
+  "rebaseWhen": "conflicted",
   "packageRules": [
     {
       "description": "Mark upgrades for automatic merge by default without requesting reviewers. Preserve the uppercase [NO-CODEOWNERS] title marker because the codeowners PR Forge app matches it case-sensitively.",
