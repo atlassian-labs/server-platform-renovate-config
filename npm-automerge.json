@@ -3,23 +3,37 @@
   "description": "Only the 'Common across DC' cases need a human: https://hello.atlassian.net/wiki/spaces/DCCore/pages/7424609152/Human+review+required+-+Enable+semi-automated+FE+Renovate+upgrades. Renovate's automerge would not stop the automerger, it only honours the commit marker. Bitbucket Cloud ignores code owners on API-created PRs, so Renovate has to add them; the API accepts only @{uuid}.",
   "packageRules": [
     {
-      "description": "Mark upgrades for automatic merge by default without requesting reviewers. Preserve the uppercase [NO-CODEOWNERS] title marker because the codeowners PR Forge app matches it case-sensitively.",
+      "description": "Mark upgrades for automatic merge by default without requesting reviewers. Preserve the uppercase [NO-CODEOWNERS] title marker because the codeowners PR Forge app matches it case-sensitively. Rebase only on conflicts, so merging one automerge PR does not rebuild every other open one.",
       "matchManagers": ["npm"],
       "commitMessageLowerCase": "never",
       "commitBody": "[renovate:auto-merge]",
       "commitMessageSuffix": "[NO-CODEOWNERS]",
       "bbUseDefaultReviewers": false,
       "reviewersFromCodeOwners": false,
-      "reviewers": []
+      "reviewers": [],
+      "rebaseWhen": "conflicted"
     },
     {
-      "description": "Require manual merge for minor and major upgrades from 0.x because these versions do not guarantee API stability.",
+      "description": "Require manual merge for minor and major upgrades from 0.x because these versions do not guarantee API stability. Grouped manual upgrades get their own PR, because a group PR takes its merge marker from its first upgrade. A human merges these, so rebasing goes back to Renovate's default.",
       "matchManagers": ["npm"],
       "matchCurrentVersion": "/^0\\./",
       "matchUpdateTypes": ["minor", "major"],
       "commitBody": "[renovate:manual-merge]",
       "commitMessageSuffix": "",
-      "reviewersFromCodeOwners": true
+      "reviewersFromCodeOwners": true,
+      "rebaseWhen": "auto",
+      "group": {
+        "branchTopic": "{{{groupSlug}}}-manual",
+        "commitMessageTopic": "{{{groupName}}} (manual merge)"
+      }
+    },
+    {
+      "description": "Keep non-npm upgrades such as Maven or .nvmrc in their own group PRs. Shared groups like patches span managers, so without this they could land in an npm PR marked for automatic merge.",
+      "matchManagers": ["!npm"],
+      "group": {
+        "branchTopic": "{{{groupSlug}}}-{{{manager}}}",
+        "commitMessageTopic": "{{{groupName}}} ({{{manager}}})"
+      }
     }
   ]
 }
